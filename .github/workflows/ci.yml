@@ -19,7 +19,7 @@ jobs:
       - run: npm test
 
       - name: SonarCloud Scan
-        uses: sonarsource/sonarcloud-github-action@v2
+        uses: sonarsource/sonarcloud-github-action@3e7a4dce75f6f834d4c21b489e0fc5ba5c790904
         with:
           args: >
             -Dsonar.projectKey=abdelilah-mo_ci-node-devops-app
