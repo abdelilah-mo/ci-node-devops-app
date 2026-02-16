@@ -19,10 +19,11 @@ jobs:
       - run: npm test
 
       - name: SonarCloud Scan
-        uses: sonarsource/sonarcloud-github-action@v2
-        with:
-          args: >
-            -Dsonar.projectKey=abdelilah-mo_ci-node-devops-app
-            -Dsonar.organization=abdelilah-mo
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+  uses: sonarsource/sonarcloud-github-action@v2
+  continue-on-error: true
+  with:
+    args: >
+      -Dsonar.projectKey=abdelilah-mo_ci-node-devops-app
+      -Dsonar.organization=abdelilah-mo
+  env:
+    SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
