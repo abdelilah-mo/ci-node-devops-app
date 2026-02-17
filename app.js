@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
-  res.json({ message: "Node DevOps TP 🚀" });
+  res.send("Version 2 🚀");
 });
 
 module.exports = app;
