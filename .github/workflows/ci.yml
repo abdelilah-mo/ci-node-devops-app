@@ -54,20 +54,4 @@ jobs:
           push: true
           tags: abdelilahmo/node-devops-app:latest
 
-  deploy:
-    needs: docker
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up kubeconfig
-        run: |
-          mkdir -p $HOME/.kube
-          echo "${{ secrets.KUBE_CONFIG }}" > $HOME/.kube/config
-
-      - name: Deploy to Kubernetes
-        run: |
-          kubectl apply -f k8s/deployment.yaml
-          kubectl rollout restart deployment node-app
+  
